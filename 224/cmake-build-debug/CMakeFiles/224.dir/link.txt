@@ -1,0 +1,3 @@
+"D:\program\CLion 2020.2.4\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\224.dir/objects.a
+D:\Mingw\x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0\mingw64\bin\ar.exe cr CMakeFiles\224.dir/objects.a @CMakeFiles\224.dir\objects1.rsp
+D:\Mingw\x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0\mingw64\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\224.dir/objects.a -Wl,--no-whole-archive  -o 224.exe -Wl,--out-implib,lib224.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\224.dir\linklibs.rsp
