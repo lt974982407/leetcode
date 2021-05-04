@@ -1,29 +1,34 @@
 #include <iostream>
+#include <unordered_set>
 #include <vector>
 
 using namespace std;
 
-struct ListNode {
-         int val;
-         ListNode *next;
-         ListNode(int x) : val(x), next(NULL) {}
-    };
+int findRepeatNumber(vector<int>& nums) {
+    unordered_set<int> s;
+    for (int i = 0; i < nums.size();i++){
+        if(s.find(nums[i]) == s.end()){
+            s.insert(nums[i]);
+        }
+        else
+            return nums[i];
+    }
+    return -1;
+}
 
-vector<int> reversePrint(ListNode* head) {
-    ListNode* p,* q ;
-    p = head;
-    q = head;
-    int len = 0;
-    while (p != NULL){
-        len++;
-        p = p->next;
+int findRepeatNumber1(vector<int>& nums) {
+    for (int i = 0;i < nums.size();i++){
+        while (nums[i] != i){
+            if (nums[i] == nums[nums[i]])
+                return nums[i];
+            else{
+                int tmp = nums[i];
+                nums[i] = nums[tmp];
+                nums[tmp] = tmp;
+            }
+        }
     }
-    vector<int> res (len,0);
-    for (int i = 0; i < len ; i++){
-        res[len - i - 1] = q -> val;
-        q = q -> next;
-    }
-    return res;
+    return -1;
 }
 
 int main() {
